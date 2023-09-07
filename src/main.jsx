@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Provider store={store}>
           <Nav/>
         <Routes>
-          <Route path={"/"} element={<PokemonPage/>}/>
+          <Route index element={<PokemonPage/>}/>
           <Route path={"/cart"} element={<CartPage/>}/>
           <Route path={"/pokemon/:id"} element={<SinglePokemonPage/>}/>
         </Routes>
