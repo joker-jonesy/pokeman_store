@@ -11,7 +11,7 @@ import Nav from "./components/Nav.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <Provider store={store}>
           <Nav/>
         <Routes>
@@ -20,6 +20,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path={"/pokemon/:id"} element={<SinglePokemonPage/>}/>
         </Routes>
       </Provider>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
 )
