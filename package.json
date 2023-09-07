@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://joker-jonesy.github.io/pokeman_store",
+  "homepage": "https://joker-jonesy.github.io/pokeman_store/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
