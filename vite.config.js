@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   // pokeman_store is your repository name
-  base:'/pokeman_store/'
+  // base:'/pokeman_store/'
 })
 
 // in settings on github, go to actions
