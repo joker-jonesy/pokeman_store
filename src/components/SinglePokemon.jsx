@@ -5,13 +5,11 @@ import {addToCart, removeFromCart} from "../reducers/cart.js";
 
 function SinglePokemon(props){
 
-    const {data, error, isLoading}= useGetPokemonByNameQuery(props.name);
+    const {data, isLoading}= useGetPokemonByNameQuery(props.name);
     const dispatch = useDispatch();
-    const cart = useSelector(state=>state.cart);
 
     const eventHandleP = (event)=>{
         event.preventDefault();
-        console.log(cart);
         dispatch(addToCart(data.name));
     }
 

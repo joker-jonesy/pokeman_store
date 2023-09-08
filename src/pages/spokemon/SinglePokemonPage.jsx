@@ -5,7 +5,7 @@ function SinglePokemonPage(){
 
     const params = useParams();
 
-    const {data, error, isLoading}= useGetPokemonByNameQuery(params.id)
+    const {data, isLoading}= useGetPokemonByNameQuery(params.id)
 
     // console.log(data)
     return(

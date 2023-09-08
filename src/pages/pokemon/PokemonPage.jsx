@@ -4,15 +4,13 @@ import SinglePokemon from "../../components/SinglePokemon.jsx";
 
 function PokemonPage(){
 
-    const {data, error, isLoading} = useGetPokemonQuery();
-
-    console.log(data);
+    const {data, isLoading} = useGetPokemonQuery();
 
     return (
         <>
             <Content>
-                {isLoading?<h1>Loading....</h1>:data.results.map((i)=>
-                    <SinglePokemon key={i} cart={false} name={i.name}/>
+                {isLoading?<h1>Loading....</h1>:data.results.map((i,idx)=>
+                    <SinglePokemon key={idx} cart={false} name={i.name}/>
                 )}
             </Content>
         </>
