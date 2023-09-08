@@ -1,15 +1,17 @@
 import {useGetPokemonByNameQuery} from "../reducers/pokemon.js";
 import {Link} from "react-router-dom";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {addToCart, removeFromCart} from "../reducers/cart.js";
 
 function SinglePokemon(props){
 
     const {data, error, isLoading}= useGetPokemonByNameQuery(props.name);
     const dispatch = useDispatch();
+    const cart = useSelector(state=>state.cart);
 
     const eventHandleP = (event)=>{
         event.preventDefault();
+        console.log(cart);
         dispatch(addToCart(data.name));
     }
 

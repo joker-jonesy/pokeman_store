@@ -6,6 +6,8 @@ function PokemonPage(){
 
     const {data, error, isLoading} = useGetPokemonQuery();
 
+    console.log(data);
+
     return (
         <>
             <Content>
