@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import {Provider} from "react-redux";
 import store from "./store.js";
-import {HashRouter, BrowserRouter, Routes, Route} from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {ApiProvider} from "@reduxjs/toolkit/dist/query/react/index.js";
 import PokemonPage from "./pages/pokemon/PokemonPage.jsx";
 import SinglePokemonPage from "./pages/spokemon/SinglePokemonPage.jsx";
@@ -13,7 +13,7 @@ import {pokemonApi} from "./reducers/pokemon.js";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <HashRouter>
+        <BrowserRouter>
             <Provider store={store}>
                 <ApiProvider api={pokemonApi}>
                     <Nav/>
@@ -24,6 +24,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                     </Routes>
                 </ApiProvider>
             </Provider>
-        </HashRouter>
+        </BrowserRouter>
     </React.StrictMode>,
 )
