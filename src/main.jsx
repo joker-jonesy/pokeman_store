@@ -9,7 +9,7 @@ import SinglePokemonPage from "./pages/spokemon/SinglePokemonPage.jsx";
 import CartPage from "./pages/cart/CartPage.jsx";
 import Nav from "./components/Nav.jsx";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.body).render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>

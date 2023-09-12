@@ -3,30 +3,32 @@ import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {addToCart, removeFromCart} from "../reducers/cart.js";
 
-function SinglePokemon(props){
+function SinglePokemon(props) {
 
-    const {data, isLoading}= useGetPokemonByNameQuery(props.name);
+    const {data, isLoading} = useGetPokemonByNameQuery(props.name);
     const dispatch = useDispatch();
 
-    const eventHandleP = (event)=>{
+    const eventHandleP = (event) => {
         event.preventDefault();
         dispatch(addToCart(data.name));
     }
 
-    const eventHandleC = (event)=>{
+    const eventHandleC = (event) => {
         event.preventDefault();
         dispatch(removeFromCart(props.idx));
     }
 
     // console.log(data)
-    return(
-        <div className={"pokemonProduct"}>
-            {isLoading?<h1>Loading....</h1>:<Link to={`/pokemon/${data.name}`}>
+    return (
+        <>
+            {isLoading ? <h1>Loading....</h1> : <Link className={"pokemonProduct"} to={`/pokemon/${data.name}`}>
                 <h1>{data.name}</h1>
                 <img src={data.sprites.front_default}/>
-                {props.cart?<button onClick={eventHandleC}>Remove from Cart</button>:<button onClick={eventHandleP}>Add to Cart</button>}
+                {props.cart ? <button onClick={eventHandleC}>Remove from Cart</button> :
+                    <button onClick={eventHandleP}>Add to Cart</button>}
             </Link>}
-        </div>
+        </>
+
     )
 }
 

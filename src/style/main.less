@@ -1,0 +1,31 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  background-color: @main;
+}
+
+body{
+  padding-top: @mobileNav;
+
+  @media screen and (min-width: @tablet ){
+    padding-top: @desktopNav;
+  }
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+button{
+  border: none;
+  background-color: white;
+}
+
+section{
+  .flexInit();
+  .flexRowCenter();
+}
